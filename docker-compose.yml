@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  docket:  
+    restart: on-failure
+    image: 10.10.69.200:8083/docket:latest
+    container_name: docket_audit_server
+    ports:
+      - "8080:8080"
+    environment:
+    - mongo.host=192.168.43.195
+    - mongo.db.name=docketDb
+    - mongo.port=27017
